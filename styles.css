@@ -1,6 +1,7 @@
-.color-p{
-    color:blue;
 }
-.size-img {
-    width: 100px;
+.nav-enlace {
+    background: black;
+    padding: 10px 30px;
+    display: inline-block;
+    text-decoration: none;
 }
