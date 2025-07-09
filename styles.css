@@ -1,9 +1,14 @@
+body {
+    background-color: #f7f4f4;
+}
+
 .nav-enlace {
-    background: rgb(3, 59, 26);
+    background: #55af50;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     padding: 10px 30px;
     color: white;
+    border-radius: 50px;
 }
 
 .nav-enlace:hover {
@@ -13,18 +18,20 @@
 
 nav {
     display: flex;
-    justify-content: space-around;
-    margin: 5px;
+    justify-content: flex-end;
+    margin: 10px 0 5px;
+    right: 0px;
+    margin-top: 110px;
 }
 
 .encabezado {
     display: flex;
-    background: white;
+    background: #ece7e7;
 }
 
 header {
-    background-color: #2A8A25;
-    width: 300px;
+    background-color: #55af50;
+    width: 950px;
     height: 150px;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
     display: flex;
@@ -34,7 +41,7 @@ header {
     padding-right: 5px;
     padding-left: 5px;
     margin: 5px;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 .logo {
@@ -57,7 +64,7 @@ header h1 {
 .barra-busqueda {
     position: absolute;
     right: 100px;
-    top: 5px;
+    top: 50px;
     padding: 10px;
 }
 
@@ -72,21 +79,41 @@ header h1 {
 }
 
 .carrusel {
-    width: 1000px;
+    width: 1300px;
     height: 200px;
-    overflow: auto;
     position: relative;
     margin: 10px;
-}
-
-.imagenes {
+    color: #f7f4f4;
+    border-radius: 50px;
+    overflow-x: auto;
     display: flex;
-    width: 100px;
-    animation: move 9s infinite;
+    gap: 10px;
+    scrollbar-width: none;
 }
 
-.imagenes img {
-    width: 100%;
-    height: 100%;
+.carrusel img {
+    border-radius: 50px;
+    flex-shrink: 0;
+    width: 1300px;
+    height: auto;
     object-fit: cover;
 }
+
+section {
+    background-color: #f7f4f4;
+    width: 300px;
+    height: 200px;
+    justify-content: space-between;
+    color: beige;
+    border-radius: 10px;
+    color: black;
+}
+
+section h2 {
+    border-radius: 10px;
+    background-color: #55af50;
+    border: 1px solid #f7f4f4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+aside {}
