@@ -79,12 +79,15 @@ header h1 {
 }
 
 .carrusel {
-    width: 100%;
-    height: 230px;
+    width: 80%;
+    height: 220px;
     overflow: hidden;
     position: relative;
     border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-left: 140px;
+    margin-top: 10px;
+    margin: center;
 }
 
 .c-imagenes {
@@ -93,7 +96,7 @@ header h1 {
     overflow-x: auto;
     scroll-behavior: smooth;
     height: 100%;
-    padding: 10px;
+    padding: 5px;
 }
 
 .c-imagenes::-webkit-scrollbar {
@@ -101,7 +104,7 @@ header h1 {
 }
 
 .c-imagenes img {
-    border-radius: 20px;
+    border-radius: 30px;
     flex-shrink: 0;
     width: 100%;
     max-width: 1300px;
@@ -115,18 +118,41 @@ header h1 {
 }
 
 section {
-    background-color: #f7f4f4;
-    width: 300px;
-    height: 200px;
+    background-color: #ffff;
+    width: 250px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding: 20px;
     justify-content: space-between;
-    color: beige;
-    border-radius: 10px;
-    color: black;
+    border-radius: 15px;
+    border: 2px solid #55af50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 section h2 {
-    border-radius: 10px;
     background-color: #55af50;
-    border: 1px solid #f7f4f4;
-    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    font-size: 1, 4px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+section li {
+    padding: 8px;
+    margin-bottom: 1px solid #e0e0e0;
+    font-size: 1em;
+    color: #333;
+}
+
+section li :last-child {
+    border-bottom: none;
 }
