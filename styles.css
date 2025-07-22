@@ -1,12 +1,14 @@
 body {
     background-color: #f7f4f4;
 }
-.redes-sociales{
+
+.redes-sociales {
     position: absolute;
     display: flex;
     margin-left: 80%;
     margin-top: 120px;
 }
+
 .icono-nav {
     width: 35px;
     height: 35px;
@@ -18,15 +20,16 @@ body {
     transition: transform 0.3s ease;
 }
 
-.icono-nav:hover{
+.icono-nav:hover {
     transform: scale(1.2);
 }
+
 .encabezado {
     display: flex;
     background-color: rgb(240, 240, 240);
     border-bottom: 1px solid #ddd;
-    padding: 5px 10px ;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) ;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 header {
@@ -84,7 +87,8 @@ header h1 {
     font-size: 14px;
     cursor: pointer;
 }
-.barra-busqueda button:hover{
+
+.barra-busqueda button:hover {
     background-color: #44933f;
 }
 
@@ -97,9 +101,11 @@ header h1 {
     font-size: 14px;
     outline: none;
 }
-.barra-busqueda input:focus{
+
+.barra-busqueda input:focus {
     border-color: #55af50;
 }
+
 .carrusel {
     width: 80%;
     height: 220px;
@@ -161,8 +167,9 @@ section h2 {
     border-radius: 15px;
     margin-bottom: 10px;
 }
-section h2:hover{
-    background-color:#44933f;
+
+section h2:hover {
+    background-color: #44933f;
 }
 
 section ul {
@@ -180,4 +187,38 @@ section li {
 
 section li :last-child {
     border-bottom: none;
+}
+
+.clima {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 5px;
+    border-radius: 10%;
+}
+
+aside {
+    background-color: #ffff;
+    width: 800px;
+    margin-left: 350px;
+    margin-top: -310px;
+    padding: 50px;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 2px solid #55af50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article {
+    background-color: #ffff;
+    width: 250px;
+    margin-left: 20px;
+    margin-top: -265px;
+    padding: 20px;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 2px solid #55af50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
 }
