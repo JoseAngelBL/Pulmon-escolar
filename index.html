@@ -39,51 +39,100 @@
         </div>
     </div>
     <div class="carrusel">
-        <div class="c-imagenes">
+        <button class="boton-izquierda">&#10094</button>
+        <button class="boton-derecha">&#10095</button>
+        <div class="c-imagenes" id="c-imagenes">
             <img src="imagenes/aire-min-e1519062954101-800x400.jpg" alt="img1">
-            <img src="imagenes/ChatGPT Image 5 jun 2025, 15_21_52.png" alt="img2">
+            <img src="imagenes/ChatGPT Image 22 jul 2025, 04_07_01 p.m..png" alt="img2">
             <img src="imagenes/darling-7655568_1280.jpg" alt="img3">
             <img src="imagenes/mountain-6815304_1280.jpg" alt="img4">
             <img src="imagenes/sky-5534319_1280.jpg" alt="img5">
         </div>
     </div>
+    <!--Seccion-->
+    <section>
+        <h2>Contactanos</h2>
+        <li>Ofinica principal</li>
+        <li>Oficina segundaria</li>
+        <li>Gmail</li>
+        <li>Whatsapp</li>
+    </section>
+    <aside>
+        <h2>Imagen satelital (INSTITUCION EDUCATIVA REPUBLICA DE URUGUAY)</h2>
+        <img src="" alt="">
+        <h2>Pronostico del clima</h2>
+        <img src="" alt="">
+    </aside>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h3>Mision</h3>
+                    <p>Promover ambientes escolares saludables mediante el monitoreo, concientizacion y mejora de la calidad del aire, fomentando habitos sostenibles y el compromiso ambiental en la comunidad educativa
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3> Vision</h3>
+                    <p>Ser un referente para crear espacios escolares limpios y seguros donde cada estudiante pueda respirar un aire limpio el cual favorece su salud y con el tiempo se podria popularizar y llegar a muchos colegios</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Valores</h3>
+                    <p>Responsabilidad, conciencia social, transparencia, empatia, mejora y adaptabilidad</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pulmón Escolar</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const contenedor = document.querySelector('.c-imagenes');
+        const btnIzquierda = document.querySelector('.boton-izquierda');
+        const btnDerecha = document.querySelector('.boton-derecha');
+
+        const imagenes = contenedor.querySelectorAll('img');
+        const imagenAncho = imagenes[0].clientWidth + 10; // 10 es el gap en tu CSS
+        let index = 0;
+        let autoScroll;
+
+        function moverCarrusel(direccion) {
+            index += direccion;
+
+            // Evitar desbordamiento
+            if (index < 0) index = 0;
+            if (index >= imagenes.length) index = imagenes.length - 1;
+
+            contenedor.scrollTo({
+                left: index * imagenAncho,
+                behavior: 'smooth',
+            });
+        }
+
+        btnIzquierda.addEventListener('click', () => moverCarrusel(-1));
+        btnDerecha.addEventListener('click', () => moverCarrusel(1));
+
+        function iniciarAutoScroll() {
+            autoScroll = setInterval(() => {
+                index = (index + 1) % imagenes.length;
+                contenedor.scrollTo({
+                    left: index * imagenAncho,
+                    behavior: 'smooth',
+                });
+            }, 3000); // cada 4 segundos
+        }
+
+        function detenerAutoScroll() {
+            clearInterval(autoScroll);
+        }
+
+        // Detener el autoplay si el usuario usa los botones
+        btnIzquierda.addEventListener('click', detenerAutoScroll);
+        btnDerecha.addEventListener('click', detenerAutoScroll);
+
+        // Iniciar automáticamente
+        window.addEventListener('load', iniciarAutoScroll);
+    </script>
 </body>
-<!--Seccion-->
-<section>
-    <h2>Contactanos</h2>
-    <li>Ofinica principal</li>
-    <li>Oficina segundaria</li>
-    <li>Gmail</li>
-    <li>Whatsapp</li>
-</section>
-<aside>
-    <h2>Imagen satelital (INSTITUCION EDUCATIVA REPUBLICA DE URUGUAY)</h2>
-    <img src="" alt="">
-    <h2>Pronostico del clima</h2>
-    <img src="" alt="">
-</aside>
-<!--Footer-->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-row">
-            <div class="footer-col">
-                <h3>Mision</h3>
-                <p>Promover ambientes escolares saludables mediante el monitoreo, concientizacion y mejora de la calidad del aire, fomentando habitos sostenibles y el compromiso ambiental en la comunidad educativa
-                </p>
-            </div>
-            <div class="footer-col">
-                <h3> Vision</h3>
-                <p>Ser un referente para crear espacios escolares limpios y seguros donde cada estudiante pueda respirar un aire limpio el cual favorece su salud y con el tiempo se podria popularizar y llegar a muchos colegios</p>
-            </div>
-            <div class="footer-col">
-                <h3>Valores</h3>
-                <p>Responsabilidad, conciencia social, transparencia, empatia, mejora y adaptabilidad</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Pulmón Escolar</p>
-        </div>
-    </div>
-</footer>
 
 </html>
