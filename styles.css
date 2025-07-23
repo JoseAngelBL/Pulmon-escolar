@@ -27,9 +27,9 @@ body {
 .encabezado {
     display: flex;
     background-color: rgb(240, 240, 240);
-    border-bottom: 1px solid #ddd;
     padding: 5px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 header {
