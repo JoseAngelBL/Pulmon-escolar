@@ -1,12 +1,14 @@
 body {
     background-color: #f7f4f4;
 }
-.redes-sociales{
+
+.redes-sociales {
     position: absolute;
     display: flex;
     margin-left: 80%;
     margin-top: 120px;
 }
+
 .icono-nav {
     width: 35px;
     height: 35px;
@@ -18,15 +20,16 @@ body {
     transition: transform 0.3s ease;
 }
 
-.icono-nav:hover{
+.icono-nav:hover {
     transform: scale(1.2);
 }
+
 .encabezado {
     display: flex;
     background-color: rgb(240, 240, 240);
     border-bottom: 1px solid #ddd;
-    padding: 5px 10px ;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) ;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 header {
@@ -73,6 +76,7 @@ header h1 {
     gap: 5px;
     margin: 10px;
     margin-bottom: 100px;
+    margin-left: 80px;
 }
 
 .barra-busqueda button {
@@ -84,7 +88,8 @@ header h1 {
     font-size: 14px;
     cursor: pointer;
 }
-.barra-busqueda button:hover{
+
+.barra-busqueda button:hover {
     background-color: #44933f;
 }
 
@@ -97,19 +102,24 @@ header h1 {
     font-size: 14px;
     outline: none;
 }
-.barra-busqueda input:focus{
+
+.barra-busqueda input:focus {
     border-color: #55af50;
 }
+
 .carrusel {
     width: 80%;
-    height: 220px;
+    height: 350px;
     overflow: hidden;
     position: relative;
     border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin-left: 140px;
-    margin-top: 10px;
-    margin: center;
+    box-shadow: 0 8 10px rgba(0, 0, 0, 0.4);
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
 }
 
 .c-imagenes {
@@ -119,6 +129,7 @@ header h1 {
     scroll-behavior: smooth;
     height: 100%;
     padding: 5px;
+    scrollbar-width: none;
 }
 
 .c-imagenes::-webkit-scrollbar {
@@ -126,7 +137,7 @@ header h1 {
 }
 
 .c-imagenes img {
-    border-radius: 30px;
+    border-radius: 50px;
     flex-shrink: 0;
     width: 100%;
     max-width: 1300px;
@@ -136,7 +147,35 @@ header h1 {
 }
 
 .c-imagenes img:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
+}
+
+.boton-derecha,
+.boton-izquierda {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 10px;
+    border-radius: 200px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.boton-izquierda {
+    left: 10px;
+}
+
+.boton-derecha {
+    right: 10px;
+}
+
+.boton-izquierda:hover,
+.boton-derecha:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 section {
@@ -161,14 +200,9 @@ section h2 {
     border-radius: 15px;
     margin-bottom: 10px;
 }
-section h2:hover{
-    background-color:#44933f;
-}
 
-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+section h2:hover {
+    background-color: #44933f;
 }
 
 section li {
