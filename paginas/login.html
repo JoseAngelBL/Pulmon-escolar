@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="stilos-login.css">
+</head>
+
+<body>
+    <div class="contenedor-login">
+        <h2>Iniciar Sesión</h2>
+        <form onsubmit="return validarLogin()">
+            <input type="text" id="usuario" placeholder="Usuario">
+            <input type="password" id="contrasena" placeholder="Contraseña">
+            <button type="submit">Ingresar</button>
+            <p id="mensaje-error"></p>
+        </form>
+    </div>
+</body>
+
+</html>
