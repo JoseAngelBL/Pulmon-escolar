@@ -264,3 +264,23 @@ section li :last-child {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 10px;
 }
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:visited {
+    color: white;
+}
+
+.footer a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+}
