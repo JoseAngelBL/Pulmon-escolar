@@ -86,11 +86,20 @@
                     <h3>Valores</h3>
                     <p>Responsabilidad, conciencia social, transparencia, empatia, mejora y adaptabilidad</p>
                 </div>
+                <div class="footer-col">
+                    <h3> Politica</h3>
+                    <P> Nos inspiramos en aplicaciones como:
+                        <p>Este proyecto se compromete a recolectar y analizar datos de calidad del aire de forma ética, segura y educativa. Se prioriza el respeto al medio ambiente, la transparencia en los datos y el uso responsable de los recursos</p>
+                        <h3>Reseñas</h3>
+                        <p>Nos inspiramos en paginas como:</p>
+                        <a href="https://siata.gov.co" target="_blank">SIATA</a>,
+                        <a href="http://rmcab.ambientebogota.gov.co/home/map" target="_blank">RMCAB</a> y
+                        <a href="https://coascolombia.org/" target="_blank">Corporación COAS Colombia</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Pulmón Escolar</p>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pulmón Escolar</p>
-            </div>
-        </div>
     </footer>
     <script>
         const contenedor = document.querySelector('.c-imagenes');
@@ -98,7 +107,7 @@
         const btnDerecha = document.querySelector('.boton-derecha');
 
         const imagenes = contenedor.querySelectorAll('img');
-        const imagenAncho = imagenes[0].clientWidth + 10; // 10 es el gap en tu CSS
+        const imagenAncho = imagenes[0].clientWidth + 10; //
         let index = 0;
         let autoScroll;
 
@@ -129,15 +138,12 @@
         }
 
         function detenerAutoScroll() {
-            clearInterval(autoScroll);
-        }
+            clearInterval(autoScrol)
 
-        // Detener el autoplay si el usuario usa los botones
-        btnIzquierda.addEventListener('click', detenerAutoScroll);
-        btnDerecha.addEventListener('click', detenerAutoScroll);
+            btnIzquierda.addEventListener('click', detenerAutoScroll);
+            btnDerecha.addEventListener('click', detenerAutoScroll);
 
-        // Iniciar automáticamente
-        window.addEventListener('load', iniciarAutoScroll);
+            window.addEventListener('load', iniciarAutoScroll);
     </script>
 </body>
 
