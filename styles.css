@@ -1,164 +1,216 @@
-body {
-    background-color: #f7f4f4;
+:root {
+    --verde: #55af50;
+    --verde-oscuro: #3e8e3b;
+    --verde-claro: #9de89c;
+    --blanco: #ffffff;
+    --gris: #f1f1f1;
+    --texto: #2b2b2b;
 }
-
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #f9fff7 0%, #eef7ec 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--texto);
+}
+/* =================== Navbar de navegacion =================== */
 .redes-sociales {
-    position: absolute;
     display: flex;
-    margin-left: 83%;
-    margin-top: 110px;
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    right: 40px;
 }
 
 .icono-nav {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
-    padding: 3px;
-    margin-right: 5px;
-    box-shadow: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
 }
 
 .icono-nav:hover {
-    transform: scale(1.2);
+    transform: scale(1.12);
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
 }
 
 .encabezado {
     display: flex;
-    background-color: rgb(240, 240, 240);
-    padding: 5px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%);
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: 70px;
+    padding: 20px;
 }
 
 header {
-    background-color: #55af50;
-    width: 950px;
-    height: 150px;
-    clip-path: polygon(0 53%, 24% 100%, 79% 100%, 100% 54%, 76% 0, 23% 0);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
-    padding-right: 5px;
-    padding-left: 5px;
-    margin: 5px;
-    border-radius: 10px;
-    border-bottom: 1px solid #e0e0e0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    gap: 12px;
+    flex-direction: column;
 }
 
 .logo {
-    width: 140px;
-    height: 120px;
-    object-fit: contain;
-    margin-left: 300px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    border-radius: 40px;
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 15px;
+    top: 10px;
 }
 
 header h1 {
-    color: aliceblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 40px;
+    font-size: 25px;
+    color: var(--blanco);
     font-weight: bold;
-    padding-right: 1500px;
-    font-weight: 600;
-    letter-spacing: 1px
+    top: 8px;
+    left: 100px;
+    position: absolute;
 }
 
-.contenedor-header {
-    position: relative;
-    width: 100%;
-    height: 80px;
+.lema {
+    font-size: 14px;
+    color: #f4f4f4;
+    margin: 0;
+    font-style: italic;
+    top: 50px;
+    left: 110px;
+    position: absolute;
 }
 
 .barra-busqueda {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 5px;
-    margin: 10px;
-    margin-bottom: 80px;
-    margin-left: 80px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 260px;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+.barra-busqueda :hover{
+    box-shadow: rgba(0, 0, 0, 0.2);
 }
 
 .barra-busqueda button {
-    padding: 8px 14px;
-    background-color: #55af50;
-    color: white;
+    padding: 6px 12px;
+    background-color: var(--verde);
+    color: var(--blanco);
     border: none;
-    border-radius: 8px;
-    font-size: 14px;
+    border-radius: 20px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
 }
 
 .barra-busqueda button:hover {
-    background-color: #44933f;
+    background: var(--verde-oscuro);
+    box-shadow: 0 2px 6px rgba(0, 0,0, 0.2);
 }
 
 .barra-busqueda input {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
+    border: none;
     outline: none;
+    background: transparent;
+    padding: 6px 25px;
+    width: 140px;
+    font-size: 13px;
 }
 
 .barra-busqueda input:focus {
-    border-color: #55af50;
+    border-color: black;
+}
+
+.botones-login {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    top: 10px;
+    right: 10px;
+    position: absolute;
+}
+
+.btn-register{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    background: linear-gradient(45deg, #55af50, #4c9d48, #3d8b39); 
+    color: white;
+    padding: 4px 5px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); 
+}
+.btn-register:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #4c9d48, #55af50, #3d8b39);
+}
+
+.btn-register svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    margin-right: 5px;
 }
 
 .btn-login {
     display: inline-flex;
     align-items: center;
-    background-color: transparent;
-    color: #44933f;
     text-decoration: none;
-    padding: 10px 16px;
-    width: 60px;
-    height: 20px;
-    border-radius: 8px;
-    font-weight: 600px;
-    font-size: 15px;
-    transition: background-color 0.3s ease;
+    background: linear-gradient(45deg, #55af50, #4c9d48, #3d8b39); 
+    color: white;
+    padding: 4px 5px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 
 .btn-login:hover {
-    background-color: #ccc;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #4c9d48, #55af50, #3d8b39);
 }
 
 .btn-login svg {
-    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    fill: white;
+    margin-right: 5px;
 }
-
+/* =================== Carrusel de fotos =================== */
 .carrusel {
-    width: 80%;
-    height: 350px;
-    overflow: hidden;
+    width: 85%;
+    max-width: 1200px;
+    height: 320px;
+    margin: 30px auto;
     position: relative;
-    border-radius: 30px;
-    box-shadow: 0 8 10px rgba(0, 0, 0, 0.4);
-    margin: 20px auto;
-    background-color: #f9f9f9;
-    border-bottom-left-radius: 200px;
-    border-bottom-right-radius: 200px;
-    border-top-left-radius: 200px;
-    border-top-right-radius: 200px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #f9fff7, #eef7ec);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .c-imagenes {
     display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
     height: 100%;
-    padding: 5px;
-    scrollbar-width: none;
+    width: 100%;
+    transition: transform 0.5s ease;
+    scroll-behavior: smooth;
 }
 
 .c-imagenes::-webkit-scrollbar {
@@ -166,17 +218,17 @@ header h1 {
 }
 
 .c-imagenes img {
-    border-radius: 50px;
-    flex-shrink: 0;
     width: 100%;
-    max-width: 1300px;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+    border-radius: 10px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .c-imagenes img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .boton-derecha,
@@ -184,29 +236,54 @@ header h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(85, 175, 80, 0.8);
     border: none;
     color: white;
     font-size: 2rem;
-    padding: 10px 10px;
-    border-radius: 200px;
+    padding: 8px 12px;
+    border-radius: 50%;
     cursor: pointer;
     z-index: 10;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .boton-izquierda {
-    left: 10px;
+    left: 15px;
 }
 
 .boton-derecha {
-    right: 10px;
+    right: 15px;
 }
 
 .boton-izquierda:hover,
 .boton-derecha:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(68, 147, 63, 0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+.indicadores {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
 }
 
+.punto {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.punto.activo {
+    background: #55af50;
+    width: 12px;
+    height: 12px;
+}
+/* =================== Section =================== */
 section {
     background-color: #ffff;
     width: 250px;
@@ -312,4 +389,17 @@ section li :last-child {
     flex: 1;
     min-width: 250px;
     text-align: left;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 600px) {
+    .carrusel {
+        height: 200px;
+    }
+
+    .boton-izquierda,
+    .boton-derecha {
+        font-size: 1.5rem;
+        padding: 6px 10px;
+    }
 }

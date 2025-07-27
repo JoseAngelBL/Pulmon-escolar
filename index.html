@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>git
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulmón Escolar</title>
@@ -14,31 +14,41 @@
         <header>
             <img src="imagenes/ChatGPT Image 5 jun 2025, 15_21_52.png" alt="" class="logo">
             <h1>Pulmón Escolar</h1>
+            <p class="lema">Respira, cuida y vive verde</p>
         </header>
         <form action="#" class="barra-busqueda">
             <input type="text" placeholder="Buscador">
             <button type="submit">Buscar</button>
         </form>
-        <a href="login.html" class="btn-login" aria-label="Iniciar sesión">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm6-4v-2a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v4h16v-4a2 2 0 0 0-2-2Zm-8-2a4 4 0 1 1 8 0v2H10v-2Z"/>
-            </svg>
-            <span>Iniciar sesión</span>
-        </a>
+        <div class="botones-login">
+            <a href="paginas/login.html" class="btn-login" aria-label="Iniciar sesión">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm6-4v-2a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v4h16v-4a2 2 0 0 0-2-2Zm-8-2a4 4 0 1 1 8 0v2H10v-2Z"/>
+                </svg>
+                <span>Iniciar sesión</span>
+            </a>
+            <a href="paginas/nosotros.html" class="btn-register" aria-label="Registrarse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path d="M19 11h-2v2h-2v2h2v2h2v-2h2v-2h-2z"/>
+                </svg>
+                Registrarse
+            </a>
+        </div>
         <!--Navbar de navegacion-->
         <div class="redes-sociales">
             <nav>
                 <!--Enlaces de las redes sociales-->
-                <a href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
                     <img src="imagenes/Facebook.jpg" alt="" class="icono-nav">
                 </a>
-                <a href="https://www.instagram.com/pulmon_escolarieru/" class="nav-enlace">
+                <a target="_blank" href="https://www.instagram.com/pulmon_escolarieru/" class="nav-enlace">
                     <img src="imagenes/Instagram.jpg" alt="" class="icono-nav">
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
                     <img src="imagenes/Youtube.png" alt="" class="icono-nav">
                 </a>
-                <a href="https://x.com/EscolarPul98913" class="nav-enlace">
+                <a target="_blank" href="https://x.com/EscolarPul98913" class="nav-enlace">
                     <img src="imagenes/x(Twitter).png" alt="" class="icono-nav">
                 </a>
             </nav>
@@ -48,12 +58,19 @@
         <button class="boton-izquierda">&#10094</button>
         <button class="boton-derecha">&#10095</button>
         <div class="c-imagenes" id="c-imagenes">
-            <img src="imagenes/aire-min-e1519062954101-800x400.jpg" alt="img1">
-            <img src="imagenes/ChatGPT Image 22 jul 2025, 04_07_01 p.m..png" alt="img2">
-            <img src="imagenes/darling-7655568_1280.jpg" alt="img3">
-            <img src="imagenes/mountain-6815304_1280.jpg" alt="img4">
-            <img src="imagenes/sky-5534319_1280.jpg" alt="img5">
+            <img src="imagenes/Cielo carrusel.png" alt="img1">
+            <img src="imagenes/Animales carrusel.png" alt="img2">
+            <img src="imagenes/Bosque carrusel.png" alt="img3">
+            <img src="imagenes/Otoño carrusel.png" alt="img4">
+            <img src="imagenes/Oceano carrusel.png" alt="img5">
         </div>
+    </div>
+    <div class="indicadores">
+        <span class="punto activo"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
     </div>
     <!--Seccion-->
     <section>
@@ -101,50 +118,7 @@
                 </div>
             </div>
     </footer>
-    <script>
-        const contenedor = document.querySelector('.c-imagenes');
-        const btnIzquierda = document.querySelector('.boton-izquierda');
-        const btnDerecha = document.querySelector('.boton-derecha');
-
-        const imagenes = contenedor.querySelectorAll('img');
-        const imagenAncho = imagenes[0].clientWidth + 10; //
-        let index = 0;
-        let autoScroll;
-
-        function moverCarrusel(direccion) {
-            index += direccion;
-
-            // Evitar desbordamiento
-            if (index < 0) index = 0;
-            if (index >= imagenes.length) index = imagenes.length - 1;
-
-            contenedor.scrollTo({
-                left: index * imagenAncho,
-                behavior: 'smooth',
-            });
-        }
-
-        btnIzquierda.addEventListener('click', () => moverCarrusel(-1));
-        btnDerecha.addEventListener('click', () => moverCarrusel(1));
-
-        function iniciarAutoScroll() {
-            autoScroll = setInterval(() => {
-                index = (index + 1) % imagenes.length;
-                contenedor.scrollTo({
-                    left: index * imagenAncho,
-                    behavior: 'smooth',
-                });
-            }, 3000); // cada 4 segundos
-        }
-
-        function detenerAutoScroll() {
-            clearInterval(autoScrol)
-
-            btnIzquierda.addEventListener('click', detenerAutoScroll);
-            btnDerecha.addEventListener('click', detenerAutoScroll);
-
-            window.addEventListener('load', iniciarAutoScroll);
-    </script>
+    <script src="carrusel.js"></script>
 </body>
 
 </html>
