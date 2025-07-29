@@ -9,14 +9,39 @@
 </head>
 
 <body>
-    <div class="contenedor-login">
-        <h2>Iniciar Sesión</h2>
-        <form onsubmit="return validarLogin()">
-            <input type="text" id="usuario" placeholder="Usuario">
-            <input type="password" id="contrasena" placeholder="Contraseña">
-            <button type="submit">Ingresar</button>
-            <p id="mensaje-error"></p>
-        </form>
+    <div class="login-contenedor">
+        <!-- Sección lateral izquierda -->
+        <aside class="contacto">
+            <h2>Contáctanos</h2>
+            <p>Ofinica principal: Calle 91a ## 70 - 193</p>
+            <p>Oficina segundaria: Cra. 59 #27B-510</p>
+            <p>Ubicacion: Medellín, Colombia</p>
+            <p>Gmail: pulmonescolar@gmail.com</p>
+            <p>Whatsapp: 3006012847</p>
+        </aside>
+
+        <!-- Sección de inicio de sesión -->
+        <section class="formulario-login">
+            <img src="imagenes-paginas/ChatGPT Image 5 jun 2025, 15_21_52.png" alt="Logo" class="logo">
+            <h1 class="titulo">Pulmon Escolar</h1>
+            <h3 class="lema">Respira pleno</h3>
+            <h2 class="subtitulo">Iniciar Sesión</h2>
+
+            <form onsubmit="return validarLogin()">
+                <input type="text" id="usuario" placeholder="Usuario">
+                <input type="password" id="contrasena" placeholder="Contraseña">
+                <button type="submit">Ingresar</button>
+                <p id="mensaje-error"></p>
+            </form>
+
+            <!-- Iconos de redes sociales -->
+            <div class="redes-sociales">
+                <a href="#"><img src="imagenes-paginas/Facebook.jpg" alt="Facebook"></a>
+                <a href="#"><img src="imagenes-paginas/Instagram.jpg" alt="Instagram"></a>
+                <a href="#"><img src="imagenes-paginas/x(Twitter).png" alt="Twitter"></a>
+                <a href="#"><img src="imagenes-paginas/Youtube.png" alt="Youtube"></a>
+            </div>
+        </section>
     </div>
 </body>
 
