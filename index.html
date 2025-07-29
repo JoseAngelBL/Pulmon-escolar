@@ -20,20 +20,34 @@
             <input type="text" placeholder="Buscador">
             <button type="submit">Buscar</button>
         </form>
+        <div class="botones-login">
+            <a href="paginas/login.html" class="btn-login" aria-label="Iniciar sesión">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm6-4v-2a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v4h16v-4a2 2 0 0 0-2-2Zm-8-2a4 4 0 1 1 8 0v2H10v-2Z"/>
+                </svg>
+                <span>Iniciar sesión</span>
+            </a>
+            <a href="paginas/nosotros.html" class="btn-register" aria-label="Registrarse">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path d="M19 11h-2v2h-2v2h2v2h2v-2h2v-2h-2z"/>
+                </svg> Registrarse
+            </a>
+        </div>
         <!--Navbar de navegacion-->
         <div class="redes-sociales">
             <nav>
                 <!--Enlaces de las redes sociales-->
-                <a href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
                     <img src="imagenes/Facebook.jpg" alt="" class="icono-nav">
                 </a>
-                <a href="https://www.instagram.com/pulmon_escolarieru/" class="nav-enlace">
+                <a target="_blank" href="https://www.instagram.com/pulmon_escolarieru/" class="nav-enlace">
                     <img src="imagenes/Instagram.jpg" alt="" class="icono-nav">
                 </a>
-                <a href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
+                <a target="_blank" href="https://www.facebook.com/profile.php?id=61576889410994" class="nav-enlace">
                     <img src="imagenes/Youtube.png" alt="" class="icono-nav">
                 </a>
-                <a href="https://x.com/EscolarPul98913" class="nav-enlace">
+                <a target="_blank" href="https://x.com/EscolarPul98913" class="nav-enlace">
                     <img src="imagenes/x(Twitter).png" alt="" class="icono-nav">
                 </a>
             </nav>
@@ -50,40 +64,66 @@
             <img src="imagenes/Oceano carrusel.png" alt="img5">
         </div>
     </div>
-</body>
-<!--Seccion-->
-<section>
-    <h2>Contactanos</h2>
-    <li>Ofinica principal</li>
-    <li>Oficina segundaria</li>
-    <li>Gmail</li>
-    <li>Whatsapp</li>
-</section>
-<aside>
-    <h2>Imagen satelital (INSTITUCION EDUCATIVA REPUBLICA DE URUGUAY)</h2>
-    <img src="" alt="">
-    <h2>Pronostico del clima</h2>
-    <img src="" alt="">
-</aside>
-<!--Footer-->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-row">
-            <div class="texto">
-                <h7>Mision</h7>
-                <p>Promover ambientes escolares saludables mediante el monitoreo, concientizacion y mejora de la calidad del aire, fomentando habitos sostenibles y el compromiso ambiental en la comunidad educativa</p>
-            </div>
-            <div class="texto">
-                <h7> Vision</h7>
-                <p>Ser un referente para crear espacios escolares limpios y seguros donde cada estudiante pueda respirar un aire limpio el cual favorece su salud y con el tiempo se podria popularizar y llegar a muchos colegios</p>
-            </div>
-            <div class="texto">
-                <h7>Valores</h7>
-                <p>Responsabilidad, conciencia social, transparencia, empatia, mejora y adaptabilidad</p>
-            </div>
-        </div>
+    <div class="indicadores">
+        <span class="punto activo"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
+        <span class="punto"></span>
     </div>
-</footer>
-
+    <!--Seccion-->
+    <section>
+        <h2>Contactanos</h2>
+        <li>Ofinica principal: Calle 91a ## 70 - 193</li>
+        <li>Oficina segundaria: Cra. 59 #27B-510,</li>
+        <li>Gmail: pulmonescolar@gmail.com</li>
+        <li>Whatsapp: 3006012847</li>
+    </section>
+    <aside>
+        <center>
+            <h2>Imagen satelital (INSTITUCION EDUCATIVA REPUBLICA DE URUGUAY)</h2>
+            <img src="imagenes/satelite.PNG" alt="img7">
+        </center>
+    </aside>
+    <article>
+        <center>
+            <h2>Pronostico del clima</h2>
+            <a href="https://www.clima.com/colombia/antioquia/medellin"><img src="imagenes/nube.jpg" class="clima"></a>
+        </center>
+    </article>
+    <!--Footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-col">
+                    <h3>Mision</h3>
+                    <p>Promover ambientes escolares saludables mediante el monitoreo, concientizacion y mejora de la calidad del aire, fomentando habitos sostenibles y el compromiso ambiental en la comunidad educativa
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h3> Vision</h3>
+                    <p>Ser un referente para crear espacios escolares limpios y seguros donde cada estudiante pueda respirar un aire limpio el cual favorece su salud y con el tiempo se podria popularizar y llegar a muchos colegios</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Valores</h3>
+                    <p>Responsabilidad, conciencia social, transparencia, empatia, mejora y adaptabilidad</p>
+                </div>
+                <div class="footer-col">
+                    <h3> Politica</h3>
+                    <P> Nos inspiramos en aplicaciones como:
+                        <p>Este proyecto se compromete a recolectar y analizar datos de calidad del aire de forma ética, segura y educativa. Se prioriza el respeto al medio ambiente, la transparencia en los datos y el uso responsable de los recursos</p>
+                        <h3>Reseñas</h3>
+                        <p>Nos inspiramos en paginas como:</p>
+                        <a href="https://siata.gov.co" target="_blank">SIATA</a>,
+                        <a href="http://rmcab.ambientebogota.gov.co/home/map" target="_blank">RMCAB</a> y
+                        <a href="https://coascolombia.org/" target="_blank">Corporación COAS Colombia</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Pulmón Escolar</p>
+                </div>
+            </div>
+    </footer>
+    <script src="carrusel.js"></script>
+</body>
 
 </html>
