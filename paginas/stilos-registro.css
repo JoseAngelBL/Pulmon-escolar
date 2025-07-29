@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #d8f3dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 800px;
+    /* mismo tamaño que registro */
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin: 40px 0;
+}
+
+.left {
+    width: 40%;
+    background-color: #6cc76c;
+    color: white;
+    padding: 25px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    font-size: 14px;
+}
+
+.left h2 {
+    font-size: 17px;
+    margin-bottom: 14px;
+}
+
+.left p {
+    line-height: 1.5;
+}
+
+.right {
+    width: 60%;
+    background-color: white;
+    padding: 28px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+.logo {
+    width: 65px;
+    margin-bottom: 12px;
+}
+
+.titulo {
+    color: #333;
+    font-weight: bold;
+    margin: 10px 0 6px;
+    font-size: 20px;
+}
+
+.subtitulo {
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.form-title {
+    color: #4caf50;
+    margin-bottom: 17px;
+    font-size: 18px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    width: 90%;
+    padding: 9px 12px;
+    margin: 7px 0;
+    border-radius: 9px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4caf50;
+}
+
+button {
+    background-color: #5dbb5d;
+    color: white;
+    padding: 9px 28px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 11px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4caf50;
+}
+
+.social-icons {
+    margin-top: 17px;
+}
+
+.social-icons img {
+    width: 25px;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}

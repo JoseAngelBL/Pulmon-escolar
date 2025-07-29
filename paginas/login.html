@@ -2,21 +2,34 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Inicio de sesión</title>
-    <link rel="stylesheet" href="stilos-login.css">
+    <link rel="stylesheet" href="stilos-login.css" />
 </head>
 
 <body>
-    <div class="contenedor-login">
-        <h2>Iniciar Sesión</h2>
-        <form onsubmit="return validarLogin()">
-            <input type="text" id="usuario" placeholder="Usuario">
-            <input type="password" id="contrasena" placeholder="Contraseña">
-            <button type="submit">Ingresar</button>
-            <p id="mensaje-error"></p>
-        </form>
+    <div class="container">
+        <div class="left">
+            <h2>Bienvenido de nuevo</h2>
+            <p>Ingresa tus datos para acceder a tu cuenta y continuar disfrutando de nuestros servicios.</p>
+        </div>
+        <div class="right">
+            <img src="logo.png" alt="Logo" class="logo" />
+            <div class="titulo">Tu sitio web</div>
+            <div class="subtitulo">Inicia sesión en tu cuenta</div>
+            <div class="form-title">Accede a tu cuenta</div>
+            <form>
+                <input type="email" placeholder="Correo electrónico" required />
+                <input type="password" placeholder="Contraseña" required />
+                <button type="submit">Entrar</button>
+            </form>
+            <div class="social-icons">
+                <img src="facebook.png" alt="Facebook" />
+                <img src="twitter.png" alt="Twitter" />
+                <img src="google.png" alt="Google" />
+            </div>
+        </div>
     </div>
 </body>
 
