@@ -295,6 +295,55 @@ header h1 {
     height: 12px;
 }
 
+.clima {
+    width: 220px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 5px;
+    border-radius: 10%;
+}
+
+aside {
+    background-color: #ffff;
+    width: 800px;
+    margin-left: 350px;
+    margin-top: -310px;
+    padding: 50px;
+    height: 100%;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 2px solid #55af50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+article {
+    background-color: #ffff;
+    width: 250px;
+    margin-left: 20px;
+    margin-top: -265px;
+    padding: 20px;
+    justify-content: space-between;
+    border-radius: 15px;
+    border: 2px solid #55af50;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-form input,
+.dropdown-form textarea {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 2px solid var(--verde);
+    border-radius: 10px;
+    font-family: inherit;
+}
+
+.dropdown-buttons button {
+    border: none;
+    outline: none;
+}
+
 
 /* =================== Section =================== */
 
@@ -319,10 +368,6 @@ section h2 {
     padding: 10px;
     border-radius: 15px;
     margin-bottom: 10px;
-}
-
-section h2:hover {
-    background-color: #44933f;
 }
 
 section li {
@@ -419,36 +464,41 @@ section li :last-child {
     }
 }
 
-.clima {
-    width: 220px;
-    height: 150px;
-    object-fit: cover;
-    margin-right: 5px;
-    border-radius: 10%;
+
+/* Oculta el modal por defecto */
+
+.hidden {
+    display: none;
 }
 
-aside {
-    background-color: #ffff;
-    width: 800px;
-    margin-left: 350px;
-    margin-top: -310px;
-    padding: 50px;
-    justify-content: space-between;
-    border-radius: 15px;
-    border: 2px solid #55af50;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    font-family: Arial, Helvetica, sans-serif;
+
+/* Fondo semitransparente para modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
 }
 
-article {
-    background-color: #ffff;
-    width: 250px;
-    margin-left: 20px;
-    margin-top: -265px;
-    padding: 20px;
-    justify-content: space-between;
+
+/* Formulario centrado */
+
+.modal-form {
+    background: #fff;
+    padding: 30px;
     border-radius: 15px;
-    border: 2px solid #55af50;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid var(--verde);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

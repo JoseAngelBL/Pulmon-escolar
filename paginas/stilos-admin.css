@@ -1,0 +1,218 @@
+:root {
+    --verde: #55af50;
+    --verde-oscuro: #3e8e3b;
+    --verde-claro: #9de89c;
+    --blanco: #ffffff;
+    --gris: #f1f1f1;
+    --texto: #2b2b2b;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #f9fff7 0%, #eef7ec 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--texto);
+}
+
+
+/* =================== Navbar de navegación =================== */
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    height: 70px;
+    position: relative;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    left: 15px;
+    top: 10px;
+}
+
+.encabezado h1 {
+    font-size: 25px;
+    color: var(--blanco);
+    font-weight: bold;
+    margin: 0 auto;
+}
+
+.botones-login {
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+}
+
+.btn-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, var(--verde), #4c9d48, #3d8b39);
+    color: var(--blanco);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-login:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #4c9d48, var(--verde), #3d8b39);
+}
+
+
+/* =================== Main Sections =================== */
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Aside styling, reused for all sections */
+
+aside {
+    background-color: var(--blanco);
+    width: 280px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid var(--verde);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--texto);
+}
+
+
+/* Show/hide sections */
+
+.section-hidden {
+    display: none;
+}
+
+.section-active {
+    display: block;
+}
+
+aside h2 {
+    background-color: var(--verde);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.4em;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    cursor: default;
+    user-select: none;
+}
+
+aside h2:hover {
+    background-color: var(--verde-oscuro);
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+aside ul li {
+    padding: 8px 5px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1em;
+    color: #333;
+}
+
+aside ul li:last-child {
+    border-bottom: none;
+}
+
+
+/* Form textarea and button */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 2px solid var(--verde);
+    font-family: inherit;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+textarea:focus {
+    border-color: var(--verde-oscuro);
+}
+
+
+/* Confirmar cerrar sesión */
+
+aside p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#confirmarCerrarSesion {
+    width: 100%;
+    padding: 10px 0;
+}
+
+
+/* Responsive */
+
+@media (max-width: 700px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+    aside {
+        width: 90%;
+        max-width: 400px;
+    }
+    .botones-login {
+        position: static;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 10px;
+    }
+    .encabezado {
+        flex-wrap: wrap;
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .logo {
+        position: static;
+        margin-bottom: 10px;
+    }
+}

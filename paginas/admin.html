@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Administrador</title>
+    <link rel="stylesheet" href="stilos-admin.css" />
+</head>
+<script>
+    if (localStorage.getItem("adminAutenticado") !== "true") {
+        window.location.href = "login.html"; // o como se llame tu página de login
+    }
+</script>
+
+<body>
+
+    <header class="encabezado">
+        <img src="imagenes-paginas/ChatGPT Image 5 jun 2025, 15_21_52.png" alt="Logo" class="logo" />
+        <h1>Panel de Administración</h1>
+        <nav class="botones-login">
+            <button id="btnComentarios" class="btn-login">Comentarios recibidos</button>
+            <button id="btnPublicar" class="btn-login">Publicar</button>
+            <button id="btnCerrarSesion" class="btn-login">Cerrar sesión</button>
+        </nav>
+    </header>
+
+    <main>
+        <aside id="comentariosSection" class="section-active">
+            <h2>Comentarios Recibidos</h2>
+            <ul>
+                <li>Usuario1: Me encanta la página.</li>
+                <li>Usuario2: ¿Cuándo actualizan el contenido?</li>
+                <li>Usuario3: Gran trabajo, felicidades.</li>
+            </ul>
+        </aside>
+
+        <aside id="publicarSection" class="section-hidden">
+            <h2>Publicar Nuevo Contenido</h2>
+            <form id="publicarForm">
+                <textarea placeholder="Escribe tu publicación aquí..." required></textarea>
+                <button type="submit" class="btn-login">Publicar</button>
+            </form>
+        </aside>
+
+        <aside id="cerrarSesionSection" class="section-hidden">
+            <h2>Cerrar Sesión</h2>
+            <p>¿Estás seguro que deseas cerrar sesión?</p>
+            <button id="confirmarCerrarSesion" class="btn-login">Cerrar sesión</button>
+        </aside>
+    </main>
+
+    <script>
+        const btnComentarios = document.getElementById('btnComentarios');
+        const btnPublicar = document.getElementById('btnPublicar');
+        const btnCerrarSesion = document.getElementById('btnCerrarSesion');
+
+        const comentariosSection = document.getElementById('comentariosSection');
+        const publicarSection = document.getElementById('publicarSection');
+        const cerrarSesionSection = document.getElementById('cerrarSesionSection');
+
+        function ocultarSecciones() {
+            comentariosSection.classList.add('section-hidden');
+            comentariosSection.classList.remove('section-active');
+            publicarSection.classList.add('section-hidden');
+            publicarSection.classList.remove('section-active');
+            cerrarSesionSection.classList.add('section-hidden');
+            cerrarSesionSection.classList.remove('section-active');
+        }
+
+        btnComentarios.addEventListener('click', () => {
+            ocultarSecciones();
+            comentariosSection.classList.remove('section-hidden');
+            comentariosSection.classList.add('section-active');
+        });
+
+        btnPublicar.addEventListener('click', () => {
+            ocultarSecciones();
+            publicarSection.classList.remove('section-hidden');
+            publicarSection.classList.add('section-active');
+        });
+
+        btnCerrarSesion.addEventListener('click', () => {
+            ocultarSecciones();
+            cerrarSesionSection.classList.remove('section-hidden');
+            cerrarSesionSection.classList.add('section-active');
+        });
+
+        document.getElementById('confirmarCerrarSesion').addEventListener('click', () => {
+            alert('Sesión cerrada.');
+            // Aquí podrías redirigir o cerrar sesión realmente
+            // window.location.href = 'login.html';
+        });
+
+        document.getElementById('publicarForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Contenido publicado.');
+            e.target.reset();
+        });
+    </script>
+
+</body>
+
+</html>
