@@ -33,16 +33,30 @@
                 <button type="submit">Ingresar</button>
                 <p id="mensaje-error"></p>
             </form>
-
-            <!-- Iconos de redes sociales -->
-            <div class="redes-sociales">
-                <a href="#"><img src="imagenes-paginas/Facebook.jpg" alt="Facebook"></a>
-                <a href="#"><img src="imagenes-paginas/Instagram.jpg" alt="Instagram"></a>
-                <a href="#"><img src="imagenes-paginas/x(Twitter).png" alt="Twitter"></a>
-                <a href="#"><img src="imagenes-paginas/Youtube.png" alt="Youtube"></a>
-            </div>
         </section>
     </div>
 </body>
+<script>
+    function validarLogin() {
+        const usuario = document.getElementById("usuario").value;
+        const contrasena = document.getElementById("contrasena").value;
+        const mensajeError = document.getElementById("mensaje-error");
+
+        // Credenciales válidas (puedes cambiarlas)
+        const usuarioValido = "admin";
+        const contrasenaValida = "1234";
+
+        if (usuario === usuarioValido && contrasena === contrasenaValida) {
+            // Guardar estado en localStorage
+            localStorage.setItem("adminAutenticado", "true");
+            window.location.href = "admin.html";
+            return false; // Previene recarga del formulario
+        } else {
+            mensajeError.textContent = "Usuario o contraseña incorrectos.";
+            mensajeError.style.color = "red";
+            return false; // Previene redirección
+        }
+    }
+</script>
 
 </html>

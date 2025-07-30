@@ -36,6 +36,43 @@ setInterval(() => {
 }, 4000);
 
 document.addEventListener("DOMContentLoaded", () => {
+<<<<<<< HEAD
+    const btnAbrir = document.getElementById("btnContactanos");
+    const modal = document.getElementById("modalComentario");
+    const btnCerrar = document.getElementById("btnCerrarModal");
+    const form = document.getElementById("formComentario");
+
+    // Abrir el modal
+    btnAbrir.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+    });
+
+    // Cerrar el modal
+    btnCerrar.addEventListener("click", () => {
+        modal.classList.add("hidden");
+    });
+
+    // Enviar comentario (solo si usuario está autenticado)
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const estaLogueado = localStorage.getItem("adminAutenticado") === "true";
+        if (!estaLogueado) {
+            alert("Debes iniciar sesión para enviar comentarios.");
+            return;
+        }
+
+        const nombre = document.getElementById("nombreComentario").value;
+        const mensaje = document.getElementById("mensajeComentario").value;
+
+        console.log("Comentario enviado:", { nombre, mensaje });
+
+        form.reset();
+        modal.classList.add("hidden");
+        alert("¡Comentario enviado con éxito!");
+    });
+});
+=======
     const botones = document.querySelectorAll(".boton-menu");
     const contenedores = document.querySelectorAll(".contenido");
   
@@ -57,3 +94,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   
+>>>>>>> 01d78cc127aa3b7ee0685b45fa566f09edd8df09
