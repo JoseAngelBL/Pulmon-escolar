@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 70px;
+    top: 80px;
     right: 40px;
 }
 
@@ -47,7 +47,7 @@ body {
     background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%);
     border-radius: 0 0 12px 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    height: 70px;
+    height: 80px;
     padding: 20px;
 }
 
@@ -99,7 +99,7 @@ header h1 {
     justify-content: center;
     position: absolute;
     left: 50%;
-    top: 30px;
+    top: 10px;
     transform: translateX(-50%);
 }
 
@@ -273,7 +273,7 @@ header h1 {
 
 .indicadores {
     position: absolute;
-    bottom: 15px;
+    bottom: 200px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -321,10 +321,6 @@ section h2 {
     margin-bottom: 10px;
 }
 
-section h2:hover {
-    background-color: #44933f;
-}
-
 section li {
     padding: 8px;
     margin-bottom: 1px solid #e0e0e0;
@@ -335,6 +331,82 @@ section li {
 section li :last-child {
     border-bottom: none;
 }
+.boton-menu {
+    position: relative; /* importante */
+    z-index: 1; /* para estar encima si es necesario */
+  }
+  
+  .contenido {
+    display: none;
+    position: relative;
+    z-index: 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+   
+.contenido.activo {
+    display: block;
+}
+  
+.acordeon-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 70px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    flex-wrap: wrap;
+}
+
+.acordeon-horizontal .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.acordeon-horizontal .boton-menu {
+    width: 100%;
+    background: linear-gradient(45deg, var(--verde), var(--verde-claro));
+    color: var(--blanco);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.acordeon-horizontal .boton-menu:hover {
+    background: linear-gradient(45deg, var(--verde-oscuro), var(--verde));
+}
+
+.acordeon-horizontal .contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+
+.acordeon-horizontal .contenido ul {
+    list-style: disc;
+    padding: 10px 15px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    color: var(--texto);
+}
+
 
 .footer {
     background-color: #55af50;
