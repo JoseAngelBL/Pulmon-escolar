@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e2f5e1, #c9e4cc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-contenedor {
+    display: flex;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 900px;
+    max-width: 100%;
+    height: 95%;
+}
+
+.contacto {
+    background: linear-gradient(135deg, #5dac59, #6ecf69);
+    color: white;
+    padding: 50px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contacto h2 {
+    bottom: 50px;
+    position: relative;
+    font-size: 30px;
+}
+
+.contacto p {
+    margin: 8px 0;
+    font-size: 14px;
+    position: relative;
+    bottom: 60px;
+    font-size: 15px;
+}
+
+.formulario-login {
+    width: 65%;
+    padding: 40px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 50px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 2px solid #5dac59;
+}
+
+.titulo {
+    margin: 10px 0 5px;
+    font-size: 28px;
+    color: #333;
+    bottom: 50px;
+    position: relative;
+}
+
+.lema {
+    margin: 0;
+    font-size: 16px;
+    color: #777;
+    bottom: 50px;
+    position: relative;
+}
+
+.subtitulo {
+    margin: 30px 0 20px;
+    color: #4b9447;
+    bottom: 70px;
+    position: relative;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    bottom: 70px;
+    position: relative;
+}
+
+input:focus {
+    border-color: #5dac59;
+}
+
+button {
+    background: linear-gradient(135deg, #5dac59, #6ecf69);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    bottom: 60px;
+    position: relative;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #4c9d48, #55af50, #3d8b39);
+}
+
+#mensaje-error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.redes-sociales {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    bottom: 60px;
+}
+
+.redes-sociales img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.redes-sociales img:hover {
+    transform: scale(1.3);
+}
