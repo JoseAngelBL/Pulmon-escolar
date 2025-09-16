@@ -7,11 +7,6 @@
     <title>Administrador</title>
     <link rel="stylesheet" href="stilos-admin.css" />
 </head>
-<script>
-    if (localStorage.getItem("adminAutenticado") !== "true") {
-        window.location.href = "login.html"; // o como se llame tu página de login
-    }
-</script>
 
 <body>
 
@@ -49,55 +44,6 @@
             <button id="confirmarCerrarSesion" class="btn-login">Cerrar sesión</button>
         </aside>
     </main>
-
-    <script>
-        const btnComentarios = document.getElementById('btnComentarios');
-        const btnPublicar = document.getElementById('btnPublicar');
-        const btnCerrarSesion = document.getElementById('btnCerrarSesion');
-
-        const comentariosSection = document.getElementById('comentariosSection');
-        const publicarSection = document.getElementById('publicarSection');
-        const cerrarSesionSection = document.getElementById('cerrarSesionSection');
-
-        function ocultarSecciones() {
-            comentariosSection.classList.add('section-hidden');
-            comentariosSection.classList.remove('section-active');
-            publicarSection.classList.add('section-hidden');
-            publicarSection.classList.remove('section-active');
-            cerrarSesionSection.classList.add('section-hidden');
-            cerrarSesionSection.classList.remove('section-active');
-        }
-
-        btnComentarios.addEventListener('click', () => {
-            ocultarSecciones();
-            comentariosSection.classList.remove('section-hidden');
-            comentariosSection.classList.add('section-active');
-        });
-
-        btnPublicar.addEventListener('click', () => {
-            ocultarSecciones();
-            publicarSection.classList.remove('section-hidden');
-            publicarSection.classList.add('section-active');
-        });
-
-        btnCerrarSesion.addEventListener('click', () => {
-            ocultarSecciones();
-            cerrarSesionSection.classList.remove('section-hidden');
-            cerrarSesionSection.classList.add('section-active');
-        });
-
-        document.getElementById('confirmarCerrarSesion').addEventListener('click', () => {
-            alert('Sesión cerrada.');
-            // Aquí podrías redirigir o cerrar sesión realmente
-            // window.location.href = 'login.html';
-        });
-
-        document.getElementById('publicarForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Contenido publicado.');
-            e.target.reset();
-        });
-    </script>
 
 </body>
 
