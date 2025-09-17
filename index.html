@@ -115,8 +115,9 @@
             <form id="formContacto" class="dropdown-form">
                 <textarea id="comentario" placeholder="Tu comentario" required></textarea>
                 <div class="dropdown-buttons">
-                    <button type="submit" class="btn-login">Enviar</button>
+                    <button onclick="createReview(event)" class="btn-login">Enviar</button>
                     <button type="button" id="btnCerrarDropdown" class="btn-login btn-cancelar">Cancelar</button>
+                    <div id="message"></div>
                 </div>
             </form>
         </div>
@@ -144,6 +145,7 @@
             <div class="footer-row">
                 <div class="footer-col">
                     <h3>Reseñas</h3>
+                    <div id="resenas"></div>
                     <p>Nos inspiramos en paginas como:</p>
                     <a href="https://siata.gov.co" target="_blank">SIATA</a>,
                     <a href="http://rmcab.ambientebogota.gov.co/home/map" target="_blank">RMCAB</a> y
