@@ -73,6 +73,14 @@
                 </div>
             </div>
         </div>
+        <div class="botones-login">
+            <a href="paginas/login.html" class="btn-login" aria-label="Iniciar sesión">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm6-4v-2a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v4h16v-4a2 2 0 0 0-2-2Zm-8-2a4 4 0 1 1 8 0v2H10v-2Z"/>
+                </svg>
+                <span>Iniciar sesión</span>
+            </a>
+        </div>
         <!--Navbar de navegacion-->
         <div class="redes-sociales">
             <nav>
@@ -115,11 +123,12 @@
         <h2>Comentarios</h2>
         <div id="dropdownContacto" class="dropdown-hidden">
             <form id="formContacto" class="dropdown-form">
-                <textarea id="comentario" placeholder="Tu comentario" required></textarea>
+                <input type="text" id="username" placeholder="Tu nombre (opcional)">
+                <textarea id="content" placeholder="Tu comentario" required></textarea>
                 <div class="dropdown-buttons">
                     <button type="submit" class="btn-enviar">Enviar</button>
                     <button type="button" id="btnCerrarDropdown" class="btn-cancelar">Cancelar</button>
-                    <button type="button" id="#" class="btn-reseñas">Ver Reseñas</button>
+                    <a href="paginas/resenas.html" class="btn-reseñas">Ver reseñas</a>
                 </div>
             </form>
         </div>
@@ -147,6 +156,7 @@
             <div class="footer-row">
                 <div class="footer-col">
                     <h3>Reseñas</h3>
+                    <div id="resenas"></div>
                     <p>Nos inspiramos en paginas como:</p>
                     <a href="https://siata.gov.co" target="_blank">SIATA</a>,
                     <a href="http://rmcab.ambientebogota.gov.co/home/map" target="_blank">RMCAB</a> y
@@ -159,34 +169,7 @@
             </div>
     </footer>
     <script src="carrusel.js"></script>
-    <script>
-        const botones = document.querySelectorAll('.boton-menu');
-
-        botones.forEach(boton => {
-            boton.addEventListener('click', () => {
-                const contenido = boton.nextElementSibling;
-
-                // Cierra todos los demás
-                document.querySelectorAll('.contenido').forEach(div => {
-                    if (div !== contenido) {
-                        div.style.display = 'none';
-                    }
-                });
-
-                // Alterna el actual
-                contenido.style.display = contenido.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-
-        // Cierra si haces clic fuera
-        document.addEventListener('click', e => {
-            if (!e.target.closest('.item')) {
-                document.querySelectorAll('.contenido').forEach(div => {
-                    div.style.display = 'none';
-                });
-            }
-        });
-    </script>
+    <script src="script-botones.js"></script>
 </body>
 
 </html>

@@ -36,10 +36,7 @@ setInterval(() => {
 }, 4000);
 
 document.addEventListener("DOMContentLoaded", () => { <<
-    <<
-    <<
-    <
-    HEAD
+    << << < HEAD
     const btnAbrir = document.getElementById("btnContactanos");
     const modal = document.getElementById("modalComentario");
     const btnCerrar = document.getElementById("btnCerrarModal");
@@ -74,4 +71,28 @@ document.addEventListener("DOMContentLoaded", () => { <<
         modal.classList.add("hidden");
         alert("¡Comentario enviado con éxito!");
     });
+}); ===
+=== =
+const botones = document.querySelectorAll(".boton-menu");
+const contenedores = document.querySelectorAll(".contenido");
+
+botones.forEach((boton, index) => {
+boton.addEventListener("click", () => {
+    const contenidoActual = contenedores[index];
+    const visible = contenidoActual.style.display === "block";
+
+    // Cierra todos los contenidos
+    contenedores.forEach((contenido) => {
+        contenido.style.display = "none";
+    });
+
+    // Solo abre el actual si estaba cerrado
+    if (!visible) {
+        contenidoActual.style.display = "block";
+    }
 });
+});
+});
+
+>>>
+>>> > 01 d78cc127aa3b7ee0685b45fa566f09edd8df09

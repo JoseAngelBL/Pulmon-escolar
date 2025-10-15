@@ -27,36 +27,53 @@
             <h3 class="lema">Respira pleno</h3>
             <h2 class="subtitulo">Iniciar Sesión</h2>
 
-            <form onsubmit="return validarLogin()">
+            <form id="loginForm">
                 <input type="text" id="usuario" placeholder="Usuario">
                 <input type="password" id="contrasena" placeholder="Contraseña">
                 <button type="submit">Ingresar</button>
-                <p id="mensaje-error"></p>
+                <p id="mensaje"></p>
             </form>
         </section>
     </div>
 </body>
 <script>
-    function validarLogin() {
-        const usuario = document.getElementById("usuario").value;
-        const contrasena = document.getElementById("contrasena").value;
-        const mensajeError = document.getElementById("mensaje-error");
+    document.getElementById("loginForm").addEventListener("submit", async function(e) {
+        e.preventDefault();
 
-        // Credenciales válidas (puedes cambiarlas)
-        const usuarioValido = "admin";
-        const contrasenaValida = "1234";
+        const username = document.getElementById("usuario").value;
+        const password = document.getElementById("contrasena").value;
 
-        if (usuario === usuarioValido && contrasena === contrasenaValida) {
-            // Guardar estado en localStorage
-            localStorage.setItem("adminAutenticado", "true");
-            window.location.href = "admin.html";
-            return false; // Previene recarga del formulario
-        } else {
-            mensajeError.textContent = "Usuario o contraseña incorrectos.";
-            mensajeError.style.color = "red";
-            return false; // Previene redirección
+        try {
+            const res = await fetch("http://localhost/PULMON-ESCOLAR/backend/login.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    username,
+                    password
+                })
+            });
+
+            // Lee la respuesta JSON una sola vez y la guarda en la variable 'data'
+            const data = await res.json();
+            console.log(data); // Muestra los datos en la consola
+
+            document.getElementById("mensaje").innerText = data.message;
+            if (data.success) {
+                document.getElementById("mensaje").style.color = "green";
+                // Asegúrate de que la palabra "location" esté bien escrita
+                window.location.href = "admin.html";
+            } else {
+                document.getElementById("mensaje").style.color = "red";
+            }
+        } catch (error) {
+            // Este bloque ahora solo se ejecutará si la conexión falla o el JSON no es válido
+            console.error("Error al procesar la respuesta:", error);
+            document.getElementById("mensaje").innerText = "Error de conexión con el servidor.";
+            document.getElementById("mensaje").style.color = "red";
         }
-    }
+    });
 </script>
 
 </html>
