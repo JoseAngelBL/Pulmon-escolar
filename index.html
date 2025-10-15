@@ -62,7 +62,7 @@
                     </ul>
                 </div>
             </div>
-        </div>                
+        </div>
         <div class="botones-login">
             <a href="paginas/login.html" class="btn-login" aria-label="Iniciar sesión">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
@@ -113,11 +113,13 @@
         <h2>Comentarios</h2>
         <div id="dropdownContacto" class="dropdown-hidden">
             <form id="formContacto" class="dropdown-form">
-                <textarea id="comentario" placeholder="Tu comentario" required></textarea>
+                <input type="text" id="username" placeholder="Tu nombre (opcional)">
+                <textarea id="content" placeholder="Tu comentario" required></textarea>
                 <div class="dropdown-buttons">
-                    <button type="submit" class="btn-login">Enviar</button>
-                    <button type="button" id="btnCerrarDropdown" class="btn-login btn-cancelar">Cancelar</button>
+                    <button onclick="enviarResena(event)" class="btn-login">Enviar</button>
+                    <button type="button" class="btn-login btn-cancelar">Cancelar</button>
                 </div>
+                <div id="message"></div>
             </form>
         </div>
         <br>
@@ -144,6 +146,7 @@
             <div class="footer-row">
                 <div class="footer-col">
                     <h3>Reseñas</h3>
+                    <div id="resenas"></div>
                     <p>Nos inspiramos en paginas como:</p>
                     <a href="https://siata.gov.co" target="_blank">SIATA</a>,
                     <a href="http://rmcab.ambientebogota.gov.co/home/map" target="_blank">RMCAB</a> y
@@ -156,6 +159,7 @@
             </div>
     </footer>
     <script src="carrusel.js"></script>
+    <script src="enviar_resenas.js"></script>
 </body>
 
 </html>
