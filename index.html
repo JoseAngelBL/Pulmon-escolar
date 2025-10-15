@@ -113,12 +113,13 @@
         <h2>Comentarios</h2>
         <div id="dropdownContacto" class="dropdown-hidden">
             <form id="formContacto" class="dropdown-form">
-                <textarea id="comentario" placeholder="Tu comentario" required></textarea>
+                <input type="text" id="username" placeholder="Tu nombre (opcional)">
+                <textarea id="content" placeholder="Tu comentario" required></textarea>
                 <div class="dropdown-buttons">
-                    <button onclick="createReview(event)" class="btn-login">Enviar</button>
-                    <button type="button" id="btnCerrarDropdown" class="btn-login btn-cancelar">Cancelar</button>
-                    <div id="message"></div>
+                    <button onclick="enviarResena(event)" class="btn-login">Enviar</button>
+                    <button type="button" class="btn-login btn-cancelar">Cancelar</button>
                 </div>
+                <div id="message"></div>
             </form>
         </div>
         <br>
@@ -158,7 +159,7 @@
             </div>
     </footer>
     <script src="carrusel.js"></script>
-    <script src="comentarios.js"></script>
+    <script src="enviar_resenas.js"></script>
 </body>
 
 </html>
