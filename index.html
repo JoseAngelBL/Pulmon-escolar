@@ -20,6 +20,16 @@
             <input type="text" placeholder="Buscador">
             <button type="submit">Buscar</button>
         </form>
+
+        <div class="botones-login">
+            <a href="paginas/login.html" class="btn-login" aria-label="Iniciar sesión">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm6-4v-2a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v4h16v-4a2 2 0 0 0-2-2Zm-8-2a4 4 0 1 1 8 0v2H10v-2Z"/>
+                </svg>
+                <span>Iniciar sesión</span>
+            </a>
+        </div>
+
         <div class="acordeon-horizontal">
             <div class="item">
                 <button class="boton-menu">Misión</button>
@@ -116,10 +126,10 @@
                 <input type="text" id="username" placeholder="Tu nombre (opcional)">
                 <textarea id="content" placeholder="Tu comentario" required></textarea>
                 <div class="dropdown-buttons">
-                    <button onclick="enviarResena(event)" class="btn-login">Enviar</button>
-                    <button type="button" class="btn-login btn-cancelar">Cancelar</button>
+                    <button type="submit" class="btn-enviar">Enviar</button>
+                    <button type="button" id="btnCerrarDropdown" class="btn-cancelar">Cancelar</button>
+                    <a href="paginas/resenas.html" class="btn-reseñas">Ver reseñas</a>
                 </div>
-                <div id="message"></div>
             </form>
         </div>
         <br>
@@ -159,7 +169,7 @@
             </div>
     </footer>
     <script src="carrusel.js"></script>
-    <script src="enviar_resenas.js"></script>
+    <script src="script-botones.js"></script>
 </body>
 
 </html>
