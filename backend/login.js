@@ -5,7 +5,7 @@ document.getElementById("loginForm").addEventListener("submit", async(e) => {
     const password = document.getElementById("123").value;
 
     try {
-        const res = await fetch("http://localhost/Pulmon_escolar/backend/login.php", {
+        const res = await fetch("http://localhost/PULMON-ESCOLAR/backend/login.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })

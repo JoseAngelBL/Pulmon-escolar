@@ -31,5 +31,27 @@
     </div>
     <script src="admin.js"></script>
 </body>
+<script>
+    async function cargarDashboard() {
+        try {
+            console.log('📊 Cargando datos del dashboard...');
+
+            const respuesta = await fetch(`${API_URL}?accion=dashboard`);
+            const datos = await respuesta.json();
+
+            if (datos.exito) {
+                actualizarEstadisticas(datos.datos);
+                cargarActividadReciente();
+                console.log('✅ Dashboard cargado correctamente');
+            } else {
+                console.error('❌ Error al cargar dashboard:', datos);
+            }
+
+        } catch (error) {
+            console.error('❌ Error de conexión:', error);
+            mostrarError('Error de conexión con el servidor');
+        }
+    }
+</script>
 
 </html>

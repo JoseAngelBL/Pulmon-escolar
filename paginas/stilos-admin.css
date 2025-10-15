@@ -193,7 +193,7 @@ aside p {
 
 #dropdownContacto {
     background-color: var(--blanco);
-    padding: 20px;
+    padding: 10px;
     border-radius: 15px;
     border: 2px solid var(--verde);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -588,6 +588,6 @@ textarea.form-control {
     .form-control,
     .form-select {
         font-size: 12px;
-        padding: 6px 8px;
+        padding: 6px 12px;
     }
 }

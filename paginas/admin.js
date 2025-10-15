@@ -32,15 +32,15 @@ function cargarResenasAdmin() {
                     </td>
                     <td>${new Date(resena.created_at).toLocaleDateString('es-ES')}</td>
                     <td>
-                        <select class="form-select" id="visible-${resena.id}">
-                            <option value="aprobado" ${resena.visible == 'aprobado' || resena.visible == 1 ? 'selected' : ''}>Aprobado</option>
-                            <option value="rechazado" ${resena.visible == 'rechazado' || resena.visible == 0 ? 'selected' : ''}>Rechazado</option>
+                        <select id="visible-${resena.id}" class="form-select ${resena.visible == 1 ? 'status-visible' : 'status-hidden'}">
+                            <option value="1" ${resena.visible == 1 ? 'selected' : ''}>Aprobado</option>
+                            <option value="0" ${ resena.visible == 0 ? 'selected' : ''}>Rechazado</option>
                         </select>
                     </td>
                     <td>
                         <div class="acciones">
-                            <button class="btn-guardar" onclick="guardarCambios(${resena.id})">💾 Guardar</button>
-                            <button class="btn-eliminar" onclick="eliminarComentario(${resena.id})">🗑️ Eliminar</button>
+                            <button class="btn-guardar" onclick="updateReview(${resena.id})">💾 Guardar</button>
+                            <button class="btn-eliminar" onclick="eliminarResena(${resena.id})">🗑️ Eliminar</button>
                         </div>
                     </td>
                 `;
@@ -59,8 +59,6 @@ function cargarResenasAdmin() {
 }
 
 async function updateReview(id) {
-    // ❌ Error: document.getElementById(name - $ { id }).value;
-    // ✅ CORREGIDO usando comillas invertidas (`) y ${id}
     const name = document.getElementById(`name-${id}`).value;
     const content = document.getElementById(`content-${id}`).value;
     const visible = document.getElementById(`visible-${id}`).value;
@@ -79,36 +77,54 @@ async function updateReview(id) {
             body: formData
         });
 
-        console.log("Respuesta del servidor:", response.status);
         const result = await response.json();
-        console.log("Resultado:", result);
-
         if (result.status === "success") {
             alert("Reseña actualizada correctamente.");
-            cargarResenasAdmin(); // Recargar tabla
+            // Actualizar las clases CSS del select según el nuevo estado
+            const selectElement = document.getElementById(`visible-${id}`);
+            if (visible == 1) {
+                selectElement.className = 'status-selector status-visible';
+            } else {
+                selectElement.className = 'status-selector status-hidden';
+            }
         } else {
-            alert("Error al actualizar: " + (result.message || "Error desconocido"));
+            alert("Error al actualizar: " + result.message);
         }
     } catch (error) {
         console.error('Error:', error);
         alert("Error de conexión al actualizar la reseña");
     }
 
-    // Nota: La llamada extra aquí puede causar doble recarga.
-    // Si ya está en el 'if (result.status === "success")', puedes quitar esta.
-    // Si la de arriba se quita (ej. por si el backend falla), esta asegura que se recargue.
-    // Por ahora, la dejaré, pero es un punto a considerar.
-    // cargarResenasAdmin(); 
+
 }
 
-// **IMPORTANTE:** Para que la función se llame al hacer clic en el botón de guardar,
-// debes asegurarte de que la función se llame 'guardarCambios' si así la tienes en el HTML,
-// o cambiar el nombre en el HTML a 'updateReview'.
-// Usando el código anterior que me diste, la función que usaste fue 'guardarCambios(1)'.
-// Debes renombrar la función:
-function guardarCambios(id) {
-    updateReview(id); // Llama a la lógica principal
+// Función para eliminar una reseña
+function eliminarResena(id) {
+    if (confirm('¿Estás seguro de que quieres eliminar esta reseña? Esta acción no se puede deshacer.')) {
+        // Crear FormData para enviar el ID
+        const formData = new FormData();
+        formData.append('id', id);
+
+        fetch("http://localhost/PULMON-ESCOLAR/backend/admin_delete_reviews.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert('Reseña eliminada exitosamente');
+                    // Recargar la tabla para mostrar los cambios
+                    cargarResenasAdmin();
+                } else {
+                    alert('Error al eliminar la reseña: ' + (data.message || 'Error desconocido'));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error de conexión al eliminar la reseña');
+            });
+    }
 }
-// O simplemente llamar la función updateReview(id) en el HTML.
+
 
 window.onload = cargarResenasAdmin;
