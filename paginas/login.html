@@ -62,6 +62,7 @@
             document.getElementById("mensaje").innerText = data.message;
             if (data.success) {
                 document.getElementById("mensaje").style.color = "green";
+                sessionStorage.setItem("admin", data.rol);
                 // Asegúrate de que la palabra "location" esté bien escrita
                 window.location.href = "admin.html";
             } else {

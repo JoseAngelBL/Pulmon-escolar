@@ -1,4 +1,9 @@
 function cargarResenasAdmin() {
+    const admin = sessionStorage.getItem("admin");
+    if (!admin) {
+        alert("Usuario no valido");
+        window.location.href = "login.html";
+    }
     fetch("http://localhost/PULMON-ESCOLAR/backend/get_resena_admin.php")
         .then(response => {
             console.log("Estado de respuesta:", response.status);
